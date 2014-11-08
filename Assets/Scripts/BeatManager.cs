@@ -7,10 +7,12 @@ public class BeatManager : MonoBehaviour {
 	public int beatTracker;
 	public bool beat;
 	public int tempo;
+	public float time;
 
 	// Use this for initialization
 	void Start () {
 		tempo = 124;
+		time = 248;
 		beatTracker = 0;
 		Play();
 	}
