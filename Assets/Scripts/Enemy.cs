@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 using XInputDotNetPure;
 
 public class Enemy : MonoBehaviour {
@@ -34,6 +35,12 @@ public class Enemy : MonoBehaviour {
 
 		inputState = GamePad.GetState(0);
 		prevState = GamePad.GetState(0);
+	
+		//Dear lord this is a mess
+		//Gets a random button and sets it to pressed
+		deathButtons.buttonState[deathButtons.buttonState.ElementAt((int)(Random.Range(0, deathButtons.buttonState.Count))).Key] = ButtonState.Pressed;
+
+		SetColor ();
 
 		beatz = GameObject.FindObjectOfType<Camera>().GetComponent<BeatManager>();
         
@@ -58,7 +65,6 @@ public class Enemy : MonoBehaviour {
 		}
 
 		inputState = GamePad.GetState(0);
-		deathButtons.buttonState[ButtonSet.TestButtons.A] = ButtonState.Pressed;
 
 		//Destroy Enemies
 		if(deathButtons.buttonPressCompare (inputState, prevState) && 
@@ -70,5 +76,26 @@ public class Enemy : MonoBehaviour {
 		}
 
 		prevState = inputState;
+	}
+
+	void SetColor () {
+		if (deathButtons.buttonState[ButtonSet.TestButtons.A] == ButtonState.Pressed) {
+			renderer.material.color = Color.green;
+		}
+		if (deathButtons.buttonState[ButtonSet.TestButtons.B] == ButtonState.Pressed) {
+			renderer.material.color = Color.red;
+		}
+		if (deathButtons.buttonState[ButtonSet.TestButtons.X] == ButtonState.Pressed) {
+			renderer.material.color = Color.blue;
+		}
+		if (deathButtons.buttonState[ButtonSet.TestButtons.Y] == ButtonState.Pressed) {
+			renderer.material.color = Color.yellow;
+		}
+		if (deathButtons.buttonState[ButtonSet.TestButtons.LB] == ButtonState.Pressed) {
+			renderer.material.color = Color.white;
+		}
+		if (deathButtons.buttonState[ButtonSet.TestButtons.RB] == ButtonState.Pressed) {
+			renderer.material.color = Color.gray;
+		}
 	}
 }
