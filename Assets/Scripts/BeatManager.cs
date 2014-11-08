@@ -3,34 +3,39 @@ using System.Collections;
 
 public class BeatManager : MonoBehaviour {
 
-	public float lastBeat;
-	int beatTracker;
+	float startTime;
+	public int beatTracker;
 	public bool beat;
 	public int tempo;
 
 	// Use this for initialization
 	void Start () {
 		tempo = 124;
+		beatTracker = 0;
 		Play();
 	}
 
+	void Awake () {
+		Application.targetFrameRate = 300;
+	}
+
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (beat) {
 			beat = false;
 		}
 
-		if (Time.time - lastBeat >= 60.0 / tempo){
+		if (Mathf.Abs(Time.time - startTime - (60/(float)tempo) * (((float)beatTracker + 1)/8)) < (Time.deltaTime / 2) + 0.0001){
 			beat = true;
-			lastBeat = Time.time;
-        }
+			beatTracker++;
+		}
 
 	}
 
 	void Play () {
 		beat = true;
 		beatTracker = 0;
-		lastBeat = Time.time;
+		startTime = Time.time;
 		gameObject.GetComponent<AudioSource>().Play();
 	}
 

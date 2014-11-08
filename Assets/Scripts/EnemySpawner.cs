@@ -12,8 +12,8 @@ public class EnemySpawner : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (beatz.beat) {
+	void FixedUpdate () {
+		if (beatz.beat && beatz.beatTracker % 8 == 0) {
 			Instantiate(spawnEnemy, gameObject.transform.position, Quaternion.identity);
 		}
 	}
