@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using XInputDotNetPure;
 
 public class ButtonSet {
-	public enum TestButtons {A, B, X, Y, RB, LB};
+	public enum TestButtons {A, B, X, Y, R, L};
 	public enum TestDirections {Up, Down, Left, Right}
 
 	public Dictionary<TestButtons, ButtonState> buttonState;
@@ -18,8 +18,8 @@ public class ButtonSet {
 		buttonState.Add(TestButtons.B, ButtonState.Released);
 		buttonState.Add(TestButtons.X, ButtonState.Released);
 		buttonState.Add(TestButtons.Y, ButtonState.Released);
-		buttonState.Add(TestButtons.RB, ButtonState.Released);
-		buttonState.Add(TestButtons.LB, ButtonState.Released);
+		buttonState.Add(TestButtons.R, ButtonState.Released);
+		buttonState.Add(TestButtons.L, ButtonState.Released);
 		stickState.Add(TestDirections.Up, ButtonState.Released);
 		stickState.Add(TestDirections.Down, ButtonState.Released);
 		stickState.Add(TestDirections.Left, ButtonState.Released);
@@ -39,10 +39,10 @@ public class ButtonSet {
 		if (state.Buttons.Y != buttonState[TestButtons.Y]) {
 			return false;
 		}
-		if (state.Buttons.RightShoulder != buttonState[TestButtons.RB]) {
+		if (state.Buttons.RightShoulder != buttonState[TestButtons.R]) {
 			return false;
 		}
-		if (state.Buttons.LeftShoulder != buttonState[TestButtons.LB]) {
+		if (state.Buttons.LeftShoulder != buttonState[TestButtons.L]) {
 			return false;
 		}
 		return true;
@@ -65,50 +65,69 @@ public class ButtonSet {
 	}
 
 	public bool buttonPressCompare(GamePadState state, GamePadState prev) {
+		int pressIndex = 0;
+
+		foreach (ButtonState b in buttonState.Values) {
+			if (b == ButtonState.Pressed) {
+				pressIndex++;
+			}
+		}
+
+		int buttonIndex = 0;
 		if (state.Buttons.A == ButtonState.Pressed && prev.Buttons.A == ButtonState.Released 
 		    && buttonState[TestButtons.A] == ButtonState.Pressed) {
-			return true;
+			buttonIndex++;
 		}
 		if (state.Buttons.B == ButtonState.Pressed && prev.Buttons.B == ButtonState.Released 
 		    && buttonState[TestButtons.B] == ButtonState.Pressed) {
-			return true;
+			buttonIndex++;
 		}
 		if (state.Buttons.X == ButtonState.Pressed && prev.Buttons.X == ButtonState.Released 
 		    && buttonState[TestButtons.X] == ButtonState.Pressed) {
-			return true;
+			buttonIndex++;
 		}
 		if (state.Buttons.Y == ButtonState.Pressed && prev.Buttons.Y == ButtonState.Released 
 		    && buttonState[TestButtons.Y] == ButtonState.Pressed) {
-			return true;
+			buttonIndex++;
 		}
 		if (state.Buttons.RightShoulder == ButtonState.Pressed && prev.Buttons.RightShoulder == ButtonState.Released 
-		    && buttonState[TestButtons.RB] == ButtonState.Pressed) {
-			return true;
+		    && buttonState[TestButtons.R] == ButtonState.Pressed) {
+			buttonIndex++;
 		}
 		if (state.Buttons.LeftShoulder == ButtonState.Pressed && prev.Buttons.LeftShoulder == ButtonState.Released 
-		    && buttonState[TestButtons.LB] == ButtonState.Pressed) {
-			return true;
+		    && buttonState[TestButtons.L] == ButtonState.Pressed) {
+			buttonIndex++;
 		}
-		return false;
+
+		return buttonIndex == pressIndex;
 	}
 	
 	public bool directionPressCompare(GamePadState state, GamePadState prev) {
+		int pressIndex = 0;
+		
+		foreach (ButtonState b in stickState.Values) {
+			if (b == ButtonState.Pressed) {
+				pressIndex++;
+            }
+        }
+        
+        int buttonIndex = 0;
 		if (state.DPad.Up == ButtonState.Pressed && prev.DPad.Up == ButtonState.Released 
 		    && stickState[TestDirections.Up] == ButtonState.Pressed) {
-			return true;
+			buttonIndex++;
 		}
 		if (state.DPad.Down == ButtonState.Pressed && prev.DPad.Down == ButtonState.Released 
 		    && stickState[TestDirections.Down] == ButtonState.Pressed) {
-			return true;
+			buttonIndex++;
 		}
 		if (state.DPad.Left == ButtonState.Pressed && prev.DPad.Left == ButtonState.Released 
 		    && stickState[TestDirections.Left] == ButtonState.Pressed) {
-			return true;
+			buttonIndex++;
 		}
 		if (state.DPad.Right == ButtonState.Pressed && prev.DPad.Right == ButtonState.Released 
 		    && stickState[TestDirections.Right] == ButtonState.Pressed) {
-			return true;
+			buttonIndex++;
 		}
-		return false;
+		return buttonIndex == pressIndex;
 	}
 }

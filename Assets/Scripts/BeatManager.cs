@@ -6,19 +6,17 @@ public class BeatManager : MonoBehaviour {
 	float startTime;
 	public int beatTracker;
 	public bool beat;
-	public int tempo;
-	public float time;
+	public int tempo = 124;
+	public int totalBeats = 4100;
+	public int countOff = 64;
+	public AudioClip metronomeClick;
+
+	public bool countingOff;
 
 	// Use this for initialization
 	void Start () {
-		tempo = 124;
-		time = 248;
 		beatTracker = 0;
-		Play();
-	}
-
-	void Awake () {
-		Application.targetFrameRate = 300;
+		countingOff = true;
 	}
 
 	// Update is called once per frame
@@ -30,6 +28,13 @@ public class BeatManager : MonoBehaviour {
 		if (Mathf.Abs(Time.time - startTime - (60/(float)tempo) * (((float)beatTracker + 1)/8)) < (Time.deltaTime / 2) + 0.0001){
 			beat = true;
 			beatTracker++;
+			if (beatTracker % 8 == 0 && countingOff) {
+				AudioSource.PlayClipAtPoint(metronomeClick, transform.position);
+			}
+			if (beatTracker == countOff && countingOff) {
+				countingOff = false;
+				Play ();
+			}
 		}
 
 	}

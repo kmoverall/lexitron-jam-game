@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using XInputDotNetPure;
 
@@ -7,17 +8,19 @@ public class Enemy : MonoBehaviour {
 
 	Transform targetLine;
 	GameObject player;
-	PlayerControl.Lanes lane;
+	public PlayerControl.Lanes lane;
 	Vector3 target;
 	BeatManager beatz;
 	double speed;
 	int spawnBeat;
-	int beatsToDeath = 32;
-	public int hitWindow = 2;
+	public const int beatsToDeath = 32;
+	public const int hitWindow = 2;
 
 	GamePadState prevState;
 	GamePadState inputState;
 	ButtonSet deathButtons;
+
+	public string buttonString;
 
 	// Use this for initialization
 	void Start () {
@@ -25,29 +28,24 @@ public class Enemy : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		deathButtons = new ButtonSet();
 
-		if (transform.position.y > 0) {
-			lane = PlayerControl.Lanes.TOP;
-		} else if (transform.position.y < 0) {
-			lane = PlayerControl.Lanes.BOT;
-		} else {
-			lane = PlayerControl.Lanes.MID;
-		}
-
 		inputState = GamePad.GetState(0);
 		prevState = GamePad.GetState(0);
 	
 		//Dear lord this is a mess
 		//Gets a random button and sets it to pressed
-		deathButtons.buttonState[deathButtons.buttonState.ElementAt((int)(Random.Range(0, deathButtons.buttonState.Count))).Key] = ButtonState.Pressed;
+		//deathButtons.buttonState[deathButtons.buttonState.ElementAt((int)(Random.Range(0, deathButtons.buttonState.Count))).Key] = ButtonState.Pressed;
 
-		SetColor ();
+		SetKey ();
 
 		beatz = GameObject.FindObjectOfType<Camera>().GetComponent<BeatManager>();
         
         target = new Vector3(-20, transform.position.y, transform.position.z);
-		speed = (transform.position.x - targetLine.position.x) / (60.0 / beatz.tempo)/4;
-		spawnBeat = beatz.beatTracker;
-
+		speed = (transform.position.x - targetLine.position.x) / (60.0 / beatz.tempo)/(beatsToDeath/8);
+		if (!beatz.countingOff) {
+			spawnBeat = beatz.beatTracker;
+		} else {
+			spawnBeat = beatz.beatTracker - beatz.countOff;
+		}
 	}
 	
 	// Update is called once per frame
@@ -71,11 +69,44 @@ public class Enemy : MonoBehaviour {
 		   beatz.beatTracker <= spawnBeat + beatsToDeath + hitWindow - 1 && 
 		   beatz.beatTracker >= spawnBeat + beatsToDeath - hitWindow &&
 		   lane == player.GetComponent<PlayerControl>().pos) {
-			Destroy(gameObject);
-			Debug.Log ("BLAMMO!");
+			gameObject.GetComponent<AudioSource>().Play ();
+			Destroy(renderer);
 		}
 
 		prevState = inputState;
+	}
+
+	public void SetKey () {
+		List<ButtonSet.TestButtons> tb = new List<ButtonSet.TestButtons>();
+		foreach (char c in buttonString) {
+			switch (c) {
+			case 'A':
+				tb.Add(ButtonSet.TestButtons.A);
+				break;
+			case 'B':
+				tb.Add(ButtonSet.TestButtons.B);
+	            break;
+			case 'X':
+				tb.Add(ButtonSet.TestButtons.X);
+	            break;
+			case 'Y':
+				tb.Add(ButtonSet.TestButtons.Y);
+	            break;
+			case 'L':
+				tb.Add(ButtonSet.TestButtons.L);
+	            break;
+			case 'R':
+				tb.Add(ButtonSet.TestButtons.R);
+	            break;
+	        }
+		}
+
+		foreach (ButtonSet.TestButtons b in tb) {
+			deathButtons.buttonState[b] = ButtonState.Pressed;
+		}
+
+
+		SetColor ();
 	}
 
 	void SetColor () {
@@ -91,10 +122,10 @@ public class Enemy : MonoBehaviour {
 		if (deathButtons.buttonState[ButtonSet.TestButtons.Y] == ButtonState.Pressed) {
 			renderer.material.color = Color.yellow;
 		}
-		if (deathButtons.buttonState[ButtonSet.TestButtons.LB] == ButtonState.Pressed) {
+		if (deathButtons.buttonState[ButtonSet.TestButtons.L] == ButtonState.Pressed) {
 			renderer.material.color = Color.white;
 		}
-		if (deathButtons.buttonState[ButtonSet.TestButtons.RB] == ButtonState.Pressed) {
+		if (deathButtons.buttonState[ButtonSet.TestButtons.R] == ButtonState.Pressed) {
 			renderer.material.color = Color.gray;
 		}
 	}

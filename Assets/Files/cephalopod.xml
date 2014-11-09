@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<chart>
+<easy>
+	<!--Drum Intro-->
+	<beat num="0"><mid>A</mid></beat>
+	<beat num="16"><mid>A</mid></beat>
+	<beat num="32"><bot>A</bot></beat>
+	<beat num="48"><bot>A</bot></beat>
+	<beat num="64"><mid>A</mid></beat>
+	<beat num="80"><mid>A</mid></beat>
+	<beat num="96"><top>A</top></beat>
+	<beat num="112"><top>A</top></beat>
+	<beat num="120"><top>A</top></beat>
+	
+	<!--Chimes Main-->
+	<beat num="136"><mid>Y</mid></beat>
+	<beat num="152"><mid>Y</mid></beat>
+	<beat num="168"><bot>Y</bot></beat>
+	<beat num="184"><bot>Y</bot></beat>
+	<beat num="200"><mid>Y</mid></beat>
+	<beat num="216"><mid>Y</mid></beat>
+	<beat num="232"><top>Y</top></beat>
+	<beat num="248"><top>Y</top></beat>
+	
+	<!--Bass Synth Main-->
+	<beat num="256"><mid>A</mid></beat>
+	<beat num="264"><mid>Y</mid></beat>
+	<beat num="280"><mid>Y</mid></beat>
+	<beat num="288"><bot>A</bot></beat>
+	<beat num="296"><bot>Y</bot></beat>
+	<beat num="312"><bot>Y</bot></beat>
+	<beat num="320"><mid>A</mid></beat>
+	<beat num="328"><mid>Y</mid></beat>
+	<beat num="344"><mid>Y</mid></beat>
+	<beat num="352"><top>A</top></beat>
+	<beat num="360"><top>Y</top></beat>
+	<beat num="376"><top>Y</top></beat>
+	<beat num="384"><mid>A</mid></beat>
+	<beat num="392"><mid>Y</mid></beat>
+	<beat num="408"><mid>Y</mid></beat>
+	<beat num="416"><bot>A</bot></beat>
+	<beat num="424"><bot>Y</bot></beat>
+	<beat num="440"><bot>Y</bot></beat>
+	<beat num="448"><mid>A</mid></beat>
+	<beat num="456"><mid>Y</mid></beat>
+	<beat num="472"><mid>Y</mid></beat>
+	<beat num="480"><mid>A</mid></beat>
+	
+	<!--Bass Synth Main-->
+	<beat num="512"><mid>A</mid></beat>
+	<beat num="520"><mid>Y</mid></beat>
+	<beat num="536"><mid>Y</mid></beat>
+	<beat num="544"><top>A</top></beat>
+	<beat num="552"><top>Y</top></beat>
+	<beat num="568"><top>Y</top></beat>
+	<beat num="576"><mid>A</mid></beat>
+	<beat num="584"><mid>Y</mid></beat>
+	<beat num="600"><mid>Y</mid></beat>
+	<beat num="608"><bot>A</bot></beat>
+	<beat num="616"><bot>Y</bot></beat>
+	<beat num="632"><bot>Y</bot></beat>
+	<beat num="640"><mid>A</mid></beat>
+	<beat num="648"><mid>Y</mid></beat>
+	<beat num="664"><mid>Y</mid></beat>
+	<beat num="672"><top>A</top></beat>
+	<beat num="680"><top>Y</top></beat>
+	<beat num="696"><top>Y</top></beat>
+	<beat num="704"><mid>B</mid></beat>
+	<beat num="720"><mid>B</mid></beat>
+	<beat num="736"><mid>X</mid></beat>
+	<beat num="752"><mid>X</mid></beat>
+	
+	<!--Bass Synth Remix-->
+	<beat num="768"><bot>B</bot></beat>
+	<beat num="776"><bot>X</bot></beat>
+	<beat num="792"><bot>X</bot></beat>
+	<beat num="800"><top>B</top></beat>
+	<beat num="808"><top>X</top></beat>
+	<beat num="824"><top>X</top></beat>
+	<beat num="832"><bot>B</bot></beat>
+	<beat num="840"><bot>X</bot></beat>
+	<beat num="856"><bot>X</bot></beat>
+	<beat num="864"><top>B</top></beat>
+	<beat num="872"><top>X</top></beat>
+	<beat num="888"><top>X</top></beat>
+	<beat num="896"><bot>B</bot></beat>
+	<beat num="904"><bot>X</bot></beat>
+	<beat num="920"><bot>X</bot></beat>
+	<beat num="928"><top>B</top></beat>
+	<beat num="936"><top>X</top></beat>
+	<beat num="952"><top>X</top></beat>
+	<beat num="960"><bot>B</bot></beat>
+	<beat num="968"><bot>X</bot></beat>
+	<beat num="984"><bot>X</bot></beat>
+	<beat num="992"><top>B</top></beat>
+	<beat num="1000"><top>X</top></beat>
+	<beat num="1008"><top>X</top></beat>
+	
+	<!--Bass Synth Main-->
+	<beat num="1024"><mid>A</mid></beat>
+	<beat num="1032"><mid>Y</mid></beat>
+	<beat num="1048"><mid>Y</mid></beat>
+	<beat num="1056"><top>A</top></beat>
+	<beat num="1064"><top>Y</top></beat>
+	<beat num="1080"><top>Y</top></beat>
+	<beat num="1088"><mid>A</mid></beat>
+	<beat num="1096"><mid>Y</mid></beat>
+	<beat num="1112"><mid>Y</mid></beat>
+	<beat num="1120"><bot>A</bot></beat>
+	<beat num="1128"><bot>Y</bot></beat>
+	<beat num="1144"><bot>Y</bot></beat>
+	<beat num="1152"><mid>A</mid></beat>
+	<beat num="1160"><mid>Y</mid></beat>
+	<beat num="1176"><mid>Y</mid></beat>
+	<beat num="1184"><top>A</top></beat>
+	<beat num="1192"><top>Y</top></beat>
+	<beat num="1208"><top>Y</top></beat>
+	<beat num="1216"><bot>A</bot></beat>
+	<beat num="1224"><bot>Y</bot></beat>
+	<beat num="1232"><mid>A</mid></beat>
+	<beat num="1240"><mid>Y</mid></beat>
+	<beat num="1248"><top>A</top></beat>
+	<beat num="1256"><top>Y</top></beat>
+	<beat num="1264"><mid>A</mid></beat>
+	<beat num="1272"><mid>Y</mid></beat>
+	
+	<!--Bongo Solo-->
+	<beat num="1280"><mid>B</mid></beat>
+	<beat num="1296"><top>X</top></beat>
+	<beat num="1312"><mid>A</mid></beat>
+	<beat num="1328"><top>Y</top></beat>
+	<beat num="1344"><mid>B</mid></beat>
+	<beat num="1360"><top>X</top></beat>
+	<beat num="1376"><top>X</top></beat>
+	<beat num="1392"><top>X</top></beat>
+	
+	<beat num="1408"><mid>B</mid></beat>
+	<beat num="1424"><top>X</top></beat>
+	<beat num="1440"><mid>A</mid></beat>
+	<beat num="1456"><top>Y</top></beat>
+	<beat num="1480"><bot>Y</bot></beat>
+	<beat num="1496"><bot>Y</bot></beat>
+	<beat num="1504"><mid>Y</mid></beat>
+	<beat num="1512"><mid>Y</mid></beat>
+	<beat num="1520"><mid>Y</mid></beat>
+	<beat num="1528"><mid>Y</mid></beat>
+	
+	<beat num="1536"><wormhole>warning</wormhole></beat>
+	
+	<!--High Synth Main-->
+	<beat num="1664"><wormhole>start</wormhole></beat>
+	<!--High Synth Main Shift-->
+	<!--High Synth Main-->
+	<!--High Synth Build-->
+	<!--Chimes Main-->
+	<beat num="2432"><wormhole>leaving</wormhole></beat>
+	
+	<!--Chimes Main w/ Claps-->
+	<beat num="2560"><wormhole>end</wormhole></beat>
+	<beat num="2568"><mid>Y</mid></beat>
+	<beat num="2584"><mid>Y</mid></beat>
+	<beat num="2600"><bot>Y</bot></beat>
+	<beat num="2616"><bot>Y</bot></beat>
+	<beat num="2632"><mid>Y</mid></beat>
+	<beat num="2648"><mid>Y</mid></beat>
+	<beat num="2664"><top>Y</top></beat>
+	<beat num="2680"><top>Y</top></beat>
+	
+	<!--Bass Remix w/ Claps-->
+	<beat num="2688"><bot>B</bot></beat>
+	<beat num="2696"><bot>X</bot></beat>
+	<beat num="2712"><bot>X</bot></beat>
+	<beat num="2720"><top>B</top></beat>
+	<beat num="2728"><top>X</top></beat>
+	<beat num="2744"><top>X</top></beat>
+	<beat num="2752"><bot>B</bot></beat>
+	<beat num="2760"><bot>X</bot></beat>
+	<beat num="2776"><bot>X</bot></beat>
+	<beat num="2784"><top>B</top></beat>
+	<beat num="2792"><top>X</top></beat>
+	<beat num="2808"><top>X</top></beat>
+	<beat num="2816"><bot>B</bot></beat>
+	<beat num="2824"><bot>X</bot></beat>
+	<beat num="2840"><bot>X</bot></beat>
+	<beat num="2848"><top>B</top></beat>
+	<beat num="2856"><top>X</top></beat>
+	<beat num="2872"><top>X</top></beat>
+	<beat num="2880"><bot>B</bot></beat>
+	<beat num="2888"><bot>X</bot></beat>
+	<beat num="2904"><bot>X</bot></beat>
+	<beat num="2912"><top>B</top></beat>
+	<beat num="2920"><top>X</top></beat>
+	<beat num="2936"><top>X</top></beat>
+	
+	<!--Bass Remix-->
+	<beat num="2944"><mid>A</mid></beat>
+	<beat num="2952"><mid>X</mid></beat>
+	<beat num="2968"><mid>X</mid></beat>
+	<beat num="2976"><top>B</top></beat>
+	<beat num="2984"><top>Y</top></beat>
+	<beat num="3000"><top>Y</top></beat>
+	<beat num="3008"><bot>A</bot></beat>
+	<beat num="3016"><bot>X</bot></beat>
+	<beat num="3032"><bot>X</bot></beat>
+	<beat num="3040"><mid>B</mid></beat>
+	<beat num="3048"><mid>Y</mid></beat>
+	<beat num="3064"><mid>Y</mid></beat>
+	<beat num="3072"><mid>B</mid></beat>
+	<beat num="3080"><mid>A</mid></beat>
+	<beat num="3096"><mid>X</mid></beat>
+	<beat num="3104"><top>B</top></beat>
+	<beat num="3112"><top>Y</top></beat>
+	<beat num="3128"><top>Y</top></beat>
+	<beat num="3136"><bot>A</bot></beat>
+	<beat num="3144"><bot>X</bot></beat>
+	<beat num="3160"><bot>X</bot></beat>
+	<beat num="3168"><mid>B</mid></beat>
+	<beat num="3176"><mid>Y</mid></beat>
+	<beat num="3192"><mid>Y</mid></beat>
+	
+	<!--Bass Remix w/ Drums & Chimes-->
+	<beat num="3200"><mid>B</mid></beat>
+	<beat num="3208"><mid>X</mid></beat>
+	<beat num="3216"><mid>A</mid></beat>
+	<beat num="3224"><mid>X</mid></beat>
+	<beat num="3232"><top>B</top></beat>
+	<beat num="3240"><top>X</top></beat>
+	<beat num="3248"><top>A</top></beat>
+	<beat num="3256"><top>X</top></beat>
+	<beat num="3264"><bot>B</bot></beat>
+	<beat num="3272"><bot>X</bot></beat>
+	<beat num="3280"><bot>A</bot></beat>
+	<beat num="3288"><bot>X</bot></beat>
+	<beat num="3296"><mid>B</mid></beat>
+	<beat num="3304"><mid>X</mid></beat>
+	<beat num="3312"><mid>A</mid></beat>
+	<beat num="3320"><mid>X</mid></beat>
+	<beat num="3328"><mid>B</mid></beat>
+	<beat num="3336"><mid>X</mid></beat>
+	<beat num="3344"><mid>A</mid></beat>
+	<beat num="3352"><mid>X</mid></beat>
+	<beat num="3360"><top>B</top></beat>
+	<beat num="3368"><top>X</top></beat>
+	<beat num="3376"><top>A</top></beat>
+	<beat num="3384"><top>X</top></beat>
+	<beat num="3392"><bot>B</bot></beat>
+	<beat num="3400"><bot>X</bot></beat>
+	<beat num="3408"><bot>A</bot></beat>
+	<beat num="3416"><bot>X</bot></beat>
+	<beat num="3424"><mid>B</mid></beat>
+	<beat num="3432"><mid>X</mid></beat>
+	<beat num="3440"><mid>A</mid></beat>
+	<beat num="3448"><mid>X</mid></beat>
+	
+	<!--Outro 1-->
+	<beat num="3456"><mid>A</mid></beat>
+	<beat num="3464"><mid>Y</mid></beat>
+	<beat num="3472"><bot>B</bot></beat>
+	<beat num="3480"><bot>X</bot></beat>
+	<beat num="3488"><mid>A</mid></beat>
+	<beat num="3496"><mid>Y</mid></beat>
+	<beat num="3504"><top>B</top></beat>
+	<beat num="3512"><top>X</top></beat>
+	<beat num="3520"><mid>A</mid></beat>
+	<beat num="3528"><mid>Y</mid></beat>
+	<beat num="3536"><bot>B</bot></beat>
+	<beat num="3544"><bot>X</bot></beat>
+	<beat num="3552"><mid>A</mid></beat>
+	<beat num="3560"><mid>Y</mid></beat>
+	<beat num="3568"><top>B</top></beat>
+	<beat num="3576"><top>X</top></beat>
+	<beat num="3584"><mid>A</mid></beat>
+	<beat num="3592"><mid>Y</mid></beat>
+	<beat num="3600"><bot>B</bot></beat>
+	<beat num="3608"><bot>X</bot></beat>
+	<beat num="3616"><mid>A</mid></beat>
+	<beat num="3624"><mid>Y</mid></beat>
+	<beat num="3632"><top>B</top></beat>
+	<beat num="3640"><top>X</top></beat>
+	<beat num="3648"><mid>A</mid></beat>
+	<beat num="3656"><mid>Y</mid></beat>
+	<beat num="3664"><bot>B</bot></beat>
+	<beat num="3672"><bot>X</bot></beat>
+	<beat num="3680"><mid>A</mid></beat>
+	<beat num="3688"><mid>Y</mid></beat>
+	<beat num="3696"><top>B</top></beat>
+	<beat num="3704"><top>X</top></beat>
+	
+	<!--Outro 2-->
+	<beat num="3712"><bot>A</bot></beat>
+	<beat num="3720"><bot>A</bot></beat>
+	<beat num="3728"><bot>A</bot></beat>
+	<beat num="3736"><bot>A</bot></beat>
+	<beat num="3744"><bot>A</bot></beat>
+	<beat num="3752"><bot>A</bot></beat>
+	<beat num="3760"><bot>A</bot></beat>
+	<beat num="3768"><bot>A</bot></beat>
+	<beat num="3776"><mid>A</mid></beat>
+	<beat num="3784"><mid>A</mid></beat>
+	<beat num="3792"><mid>A</mid></beat>
+	<beat num="3800"><mid>A</mid></beat>
+	<beat num="3808"><top>A</top></beat>
+	<beat num="3816"><top>A</top></beat>
+	<beat num="3824"><top>A</top></beat>
+	<beat num="3832"><top>A</top></beat>
+	
+	<beat num="3840"><bot>A</bot></beat>
+	<beat num="3848"><bot>B</bot></beat>
+	<beat num="3856"><bot>A</bot></beat>
+	<beat num="3864"><bot>B</bot></beat>
+	<beat num="3872"><bot>A</bot></beat>
+	<beat num="3880"><bot>B</bot></beat>
+	<beat num="3888"><bot>A</bot></beat>
+	<beat num="3896"><bot>B</bot></beat>
+	<beat num="3904"><bot>A</bot></beat>
+	<beat num="3912"><mid>B</mid></beat>
+	<beat num="3920"><bot>A</bot></beat>
+	<beat num="3928"><mid>B</mid></beat>
+	<beat num="3936"><bot>A</bot></beat>
+	<beat num="3944"><top>B</top></beat>
+	<beat num="3952"><bot>A</bot></beat>
+	<beat num="3960"><top>B</top></beat>
+	<beat num="3968"><mid>XY</mid></beat>
+	
+	
+</easy>
+</chart>
