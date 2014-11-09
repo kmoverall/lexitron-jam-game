@@ -17,6 +17,7 @@ public class BeatManager : MonoBehaviour {
 	void Start () {
 		beatTracker = 0;
 		countingOff = true;
+		startTime = Time.time;
 	}
 
 	// Update is called once per frame

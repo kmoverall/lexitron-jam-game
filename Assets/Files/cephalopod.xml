@@ -146,17 +146,79 @@
 	<beat num="1528"><mid>Y</mid></beat>
 	
 	<beat num="1536"><wormhole>warning</wormhole></beat>
-	<beat num="1600"><wormhole>entering</wormhole></beat>
-	<beat num="1632"><wormhole>start</wormhole></beat>
+	<beat num="1632"><wormhole>entering</wormhole></beat>
+	<beat num="1647"><wormhole>start</wormhole></beat>
 	
 	<!--High Synth Main-->
+	<beat num="1664"><wormhole>A</wormhole></beat>
+	<beat num="1680"><wormhole>A</wormhole></beat>
+	<beat num="1696"><wormhole>Ar</wormhole></beat>
+	<beat num="1712"><wormhole>Ar</wormhole></beat>
+	<beat num="1728"><wormhole>Aru</wormhole></beat>
+	<beat num="1744"><wormhole>Aru</wormhole></beat>
+	<beat num="1760"><wormhole>Au</wormhole></beat>
+	<beat num="1776"><wormhole>Au</wormhole></beat>
+	<beat num="1792"><wormhole>A</wormhole></beat>
+	<beat num="1808"><wormhole>A</wormhole></beat>
+	<beat num="1824"><wormhole>Ar</wormhole></beat>
+	<beat num="1840"><wormhole>Ar</wormhole></beat>
+	<beat num="1856"><wormhole>Aru</wormhole></beat>
+	<beat num="1872"><wormhole>Aru</wormhole></beat>
+	<beat num="1888"><wormhole>Au</wormhole></beat>
+	<beat num="1904"><wormhole>Au</wormhole></beat>
+	
 	<!--High Synth Main Shift-->
+	<beat num="1920"><wormhole>B</wormhole></beat>
+	<beat num="1936"><wormhole>B</wormhole></beat>
+	<beat num="1952"><wormhole>Bl</wormhole></beat>
+	<beat num="1968"><wormhole>Bl</wormhole></beat>
+	<beat num="1984"><wormhole>Bld</wormhole></beat>
+	<beat num="2000"><wormhole>Bld</wormhole></beat>
+	<beat num="2016"><wormhole>Bd</wormhole></beat>
+	<beat num="2032"><wormhole>Bd</wormhole></beat>
+	
 	<!--High Synth Main-->
+	<beat num="2048"><wormhole>A</wormhole></beat>
+	<beat num="2064"><wormhole>A</wormhole></beat>
+	<beat num="2080"><wormhole>Ar</wormhole></beat>
+	<beat num="2096"><wormhole>Ar</wormhole></beat>
+	<beat num="2112"><wormhole>Aru</wormhole></beat>
+	<beat num="2128"><wormhole>Aru</wormhole></beat>
+	<beat num="2144"><wormhole>Au</wormhole></beat>
+	<beat num="2160"><wormhole>Au</wormhole></beat>
+	<beat num="2176"><wormhole>A</wormhole></beat>
+	<beat num="2192"><wormhole>A</wormhole></beat>
+	<beat num="2208"><wormhole>Ar</wormhole></beat>
+	<beat num="2224"><wormhole>Ar</wormhole></beat>
+	<beat num="2240"><wormhole>Aru</wormhole></beat>
+	<beat num="2256"><wormhole>Aru</wormhole></beat>
+	<beat num="2272"><wormhole>Au</wormhole></beat>
+	<beat num="2288"><wormhole>Au</wormhole></beat>
+	
 	<!--High Synth Build-->
+	<beat num="2304"><wormhole>X</wormhole></beat>
+	<beat num="2320"><wormhole>X</wormhole></beat>
+	<beat num="2336"><wormhole>X</wormhole></beat>
+	<beat num="2352"><wormhole>X</wormhole></beat>
+	<beat num="2368"><wormhole>X</wormhole></beat>
+	<beat num="2376"><wormhole>X</wormhole></beat>
+	<beat num="2384"><wormhole>X</wormhole></beat>
+	<beat num="2392"><wormhole>X</wormhole></beat>
+	<beat num="2400"><wormhole>X</wormhole></beat>
+	<beat num="2404"><wormhole>X</wormhole></beat>
+	<beat num="2408"><wormhole>X</wormhole></beat>
+	<beat num="2412"><wormhole>X</wormhole></beat>
+	<beat num="2416"><wormhole>X</wormhole></beat>
+	<beat num="2420"><wormhole>X</wormhole></beat>
+	<beat num="2424"><wormhole>X</wormhole></beat>
+	<beat num="2428"><wormhole>X</wormhole></beat>
+	<beat num="2432"><wormhole>X</wormhole></beat>
+	
 	<!--Chimes Main-->
-	<beat num="2400"><wormhole>warning</wormhole></beat>
-	<beat num="2464"><wormhole>leaving</wormhole></beat>
-	<beat num="2496"><wormhole>end</wormhole></beat>
+	<beat num="2425"><wormhole>warning</wormhole></beat>
+	<beat num="2520"><wormhole>leaving</wormhole></beat>
+	<beat num="2536"><wormhole>end</wormhole></beat>
+	
 	<!--Chimes Main w/ Claps-->
 	<beat num="2568"><mid>Y</mid></beat>
 	<beat num="2584"><mid>Y</mid></beat>

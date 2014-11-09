@@ -6,7 +6,7 @@ using System.Linq;
 public class LevelReader : MonoBehaviour {
 
 	public EnemySpawner[] lanes = {null,null,null};
-	public WormholeSpawner[] whSpawn = null;
+	public WormholeSpawner whSpawn = null;
 	BeatManager beatz;
 	XmlDocument chart;
 	int shiftTime = 32;
@@ -20,7 +20,7 @@ public class LevelReader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		Screen.showCursor = false;
 		beatz = GameObject.FindObjectOfType<Camera>().GetComponent<BeatManager>();
 		chart = new XmlDocument();
 		chart.Load ("Assets\\Files\\cephalopod.xml");
@@ -58,7 +58,6 @@ public class LevelReader : MonoBehaviour {
 				if (spawnNode != null) {
 					if (spawnNode.InnerText == "entering") {
 						state = LevelState.ENTERING;
-						Debug.Log("Entering Wormhole");
 					}
 				}
 			}
@@ -82,7 +81,6 @@ public class LevelReader : MonoBehaviour {
                 if (spawnNode != null) {
                     if (spawnNode.InnerText == "start") {
                         state = LevelState.WORMHOLE;
-                        Debug.Log("Wormhole Entered");
                     }
                 }
 			}
@@ -97,12 +95,13 @@ public class LevelReader : MonoBehaviour {
 				} else {
 					beatnum += Enemy.beatsToDeath;
 				}
-				
+								
 				XmlNode spawnNode = chart.SelectSingleNode("chart/easy/beat[@num='"+beatnum+"']/wormhole");
 				if (spawnNode != null) {
 					if (spawnNode.InnerText == "leaving") {
 						state = LevelState.EXITING;
-						Debug.Log("Exiting Wormhole");
+					} else if (spawnNode.InnerText != "warning"){
+						whSpawn.Spawn(spawnNode.InnerText);
 					}
 				}
             }
@@ -126,7 +125,6 @@ public class LevelReader : MonoBehaviour {
 				if (spawnNode != null) {
 					if (spawnNode.InnerText == "end") {
                         state = LevelState.CRUISING;
-                        Debug.Log("Wormhole Left");
                     }
                 }
             }
