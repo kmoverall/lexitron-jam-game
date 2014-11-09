@@ -146,17 +146,18 @@
 	<beat num="1528"><mid>Y</mid></beat>
 	
 	<beat num="1536"><wormhole>warning</wormhole></beat>
+	<beat num="1600"><wormhole>entering</wormhole></beat>
+	<beat num="1632"><wormhole>start</wormhole></beat>
 	
 	<!--High Synth Main-->
-	<beat num="1664"><wormhole>start</wormhole></beat>
 	<!--High Synth Main Shift-->
 	<!--High Synth Main-->
 	<!--High Synth Build-->
 	<!--Chimes Main-->
-	<beat num="2432"><wormhole>leaving</wormhole></beat>
-	
+	<beat num="2400"><wormhole>warning</wormhole></beat>
+	<beat num="2464"><wormhole>leaving</wormhole></beat>
+	<beat num="2496"><wormhole>end</wormhole></beat>
 	<!--Chimes Main w/ Claps-->
-	<beat num="2560"><wormhole>end</wormhole></beat>
 	<beat num="2568"><mid>Y</mid></beat>
 	<beat num="2584"><mid>Y</mid></beat>
 	<beat num="2600"><bot>Y</bot></beat>

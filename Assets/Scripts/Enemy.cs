@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour {
 	BeatManager beatz;
 	double speed;
 	int spawnBeat;
-	public const int beatsToDeath = 32;
+	public const int beatsToDeath = 40;
 	public const int hitWindow = 2;
 
 	GamePadState prevState;
