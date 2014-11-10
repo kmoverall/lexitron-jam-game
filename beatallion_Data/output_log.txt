@@ -1,0 +1,31 @@
+Initialize engine version: 4.5.5f1 (7684ad0c5a44)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     64 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Kevin\Documents\LexitronJamGame\beatallion_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Kevin\Documents\LexitronJamGame\beatallion_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Kevin\Documents\LexitronJamGame\beatallion_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Kevin\Documents\LexitronJamGame\beatallion_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Kevin\Documents\LexitronJamGame\beatallion_Data\Managed\XInputDotNetPure.dll (this message is harmless)
+Loading C:\Users\Kevin\Documents\LexitronJamGame\beatallion_Data\Managed\XInputDotNetPure.dll into Unity Child Domain
+- Completed reload, in  0.082 seconds
+desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Kevin\Documents\LexitronJamGame\beatallion_Data\Managed\System.Xml.dll (this message is harmless)
+Platform assembly: C:\Users\Kevin\Documents\LexitronJamGame\beatallion_Data\Managed\System.dll (this message is harmless)
+Going fullscreen at 1080p...
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Platform assembly: C:\Users\Kevin\Documents\LexitronJamGame\beatallion_Data\Managed\System.Core.dll (this message is harmless)
+UnloadTime: 0.241847 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 165.
+Total: 0.546610 ms (FindLiveObjects: 0.007139 ms CreateObjectMapping: 0.006693 ms MarkObjects: 0.091473 ms  DeleteObjects: 0.003123 ms)
+

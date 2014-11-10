@@ -52,10 +52,10 @@ public class LexitronManager : MonoBehaviour {
   
   void Awake () {
     // Enable this component if the "-lexitron" command line argument was given.
-    this.enabled = Environment.GetCommandLineArgs().Any(arg => arg.Equals("-lexitron"));
+    //this.enabled = Environment.GetCommandLineArgs().Any(arg => arg.Equals("-lexitron"));
     
     // If this isn't the Lexitron, give up.
-    if (!this.enabled) return;
+    //if (!this.enabled) return;
 
 		DontDestroyOnLoad(transform.gameObject);
     
@@ -88,7 +88,7 @@ public class LexitronManager : MonoBehaviour {
     
     // LEX button held down: ']'
     if (Input.GetKeyDown(KeyCode.RightBracket)) {
-			UnityEditor.EditorApplication.isPlaying = false;
+			//UnityEditor.EditorApplication.isPlaying = false;
       Application.Quit();
     }
   }

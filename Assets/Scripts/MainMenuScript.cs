@@ -101,7 +101,7 @@ public class MainMenuScript : MonoBehaviour {
 					state.Push(MenuState.HELP);
 					selectedIndex = 1;
 				} else if (selectedIndex == 2) {
-					UnityEditor.EditorApplication.isPlaying = false;
+					//UnityEditor.EditorApplication.isPlaying = false;
 					Application.Quit();
 	            }
 				break;
