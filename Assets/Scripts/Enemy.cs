@@ -11,10 +11,15 @@ public class Enemy : MonoBehaviour {
 	public PlayerControl.Lanes lane;
 	Vector3 target;
 	BeatManager beatz;
+	Score score;
 	double speed;
 	int spawnBeat;
 	public const int beatsToDeath = 40;
 	public const int hitWindow = 2;
+
+	public AudioClip playerHitSound;
+
+	bool passed;
 
 	GamePadState prevState;
 	GamePadState inputState;
@@ -24,6 +29,9 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		passed = false;
+
 		targetLine = GameObject.FindGameObjectWithTag("BeatBoundary").transform;
 		player = GameObject.FindGameObjectWithTag("Player");
 		deathButtons = new ButtonSet();
@@ -38,6 +46,7 @@ public class Enemy : MonoBehaviour {
 		SetKey ();
 
 		beatz = GameObject.FindObjectOfType<Camera>().GetComponent<BeatManager>();
+		score = GameObject.FindObjectOfType<Camera>().GetComponent<Score>();
         
         target = new Vector3(-20, transform.position.y, transform.position.z);
 		speed = (transform.position.x - targetLine.position.x) / (60.0 / beatz.tempo)/(beatsToDeath/8);
@@ -71,6 +80,20 @@ public class Enemy : MonoBehaviour {
 		   lane == player.GetComponent<PlayerControl>().pos) {
 			gameObject.GetComponent<AudioSource>().Play ();
 			Destroy(renderer);
+			passed = true;
+			score.Hit(10);
+		}
+
+		if (!passed && beatz.beatTracker == spawnBeat + beatsToDeath + 8) {
+			if (lane == player.GetComponent<PlayerControl>().pos) {
+				score.GotHit();
+				Destroy(renderer);
+				passed = true;
+				AudioSource.PlayClipAtPoint(playerHitSound, transform.position);
+			} else {
+				passed = true;
+				score.Dodge();
+			}
 		}
 
 		prevState = inputState;

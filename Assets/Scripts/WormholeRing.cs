@@ -15,6 +15,7 @@ public class WormholeRing : MonoBehaviour {
 	BeatManager beatz;
 	double speed;
 	int spawnBeat;
+	Score score;
 	public const int beatsToDeath = 40;
 	public const int hitWindow = 2;
 
@@ -35,6 +36,8 @@ public class WormholeRing : MonoBehaviour {
 
 		inputState = GamePad.GetState(0);
 		prevState = GamePad.GetState(0);
+
+		score = GameObject.FindObjectOfType<Camera>().GetComponent<Score>();
 		
 		//Dear lord this is a mess
 		//Gets a random button and sets it to pressed
@@ -82,9 +85,15 @@ public class WormholeRing : MonoBehaviour {
 		   sidelane == player.GetComponent<PlayerControl>().sidepos &&
 		   !passed) {
 				passed = true;
+				score.Hit(15);
 				gameObject.GetComponent<AudioSource>().Play ();
+				
 				Destroy(bgQuad.gameObject.renderer);
 				Destroy(renderer);
+		}
+		if (!passed && beatz.beatTracker > spawnBeat + beatsToDeath + hitWindow - 1) {
+			passed = true;
+			score.Dodge();
 		}
 		
 		prevState = inputState;

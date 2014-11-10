@@ -3,6 +3,7 @@ using System.Collections;
 using System.Xml;
 using System.Linq;
 
+//Reads levels and sends messages to spawners to spawn level
 public class LevelReader : MonoBehaviour {
 
 	public EnemySpawner[] lanes = {null,null,null};

@@ -15,6 +15,7 @@ public class BeatManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		totalBeats = 4100;
 		beatTracker = 0;
 		countingOff = true;
 		startTime = Time.time;
@@ -36,6 +37,10 @@ public class BeatManager : MonoBehaviour {
 				countingOff = false;
 				Play ();
 			}
+		}
+
+		if (beatTracker == totalBeats) {
+			Application.LoadLevel("Game Over");
 		}
 
 	}

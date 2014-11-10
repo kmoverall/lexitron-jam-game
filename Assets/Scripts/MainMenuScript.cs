@@ -28,7 +28,7 @@ public class MainMenuScript : MonoBehaviour {
 		style = GUI.skin.GetStyle("Label");
 		style.alignment = TextAnchor.MiddleCenter;
 		style.normal.textColor = Color.white;
-		GUI.Label (new Rect (Screen.width/2, Screen.height/2 - 100, 100, 50), "Space BEATallion", style);
+		GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 - 100, 100, 50), "Space BEATallion", style);
 
 		switch (state.Peek ()) {
 		case MenuState.MAIN:
@@ -38,7 +38,7 @@ public class MainMenuScript : MonoBehaviour {
 			else {
 				style.normal.textColor = Color.white;
 			}            
-            GUI.Label (new Rect (Screen.width/2, Screen.height/2, 100, 50), "Start", style);
+			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2, 100, 50), "Start", style);
 
 			if (selectedIndex == 1) {
 				style.normal.textColor = Color.yellow;
@@ -46,7 +46,7 @@ public class MainMenuScript : MonoBehaviour {
 			else {
 				style.normal.textColor = Color.white;
             }
-			GUI.Label (new Rect (Screen.width/2, Screen.height/2 + 50, 100, 50), "Help", style);
+			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 + 50, 100, 50), "Help", style);
 
 			if (selectedIndex == 2) {
 				style.normal.textColor = Color.yellow;
@@ -54,7 +54,7 @@ public class MainMenuScript : MonoBehaviour {
 			else {
 				style.normal.textColor = Color.white;
             }
-			GUI.Label (new Rect (Screen.width/2, Screen.height/2 + 100, 100, 50), "Quit", style);
+			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 + 100, 100, 50), "Quit", style);
 			break;
 		case MenuState.SONG:
 			if (selectedIndex == 0) {
@@ -63,7 +63,7 @@ public class MainMenuScript : MonoBehaviour {
 			else {
 				style.normal.textColor = Color.white;
 			}            
-			GUI.Label (new Rect (Screen.width/2, Screen.height/2, 100, 50), "Cephalopod", style);
+			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2, 100, 50), "Cephalopod", style);
             break;
 		case MenuState.DIFF:
 			if (selectedIndex == 0) {
@@ -72,7 +72,7 @@ public class MainMenuScript : MonoBehaviour {
 			else {
 				style.normal.textColor = Color.white;
 			}            
-			GUI.Label (new Rect (Screen.width/2, Screen.height/2, 100, 50), "Easy", style);
+			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2, 100, 50), "Easy", style);
             break;
 		case MenuState.HELP:
 			break;
