@@ -7,6 +7,13 @@ using XInputDotNetPure;
 public class Enemy : MonoBehaviour {
 
 	Transform targetLine;
+
+    public Transform explosionParticle;
+    public Transform playerExplosionParticle;
+    public Transform engineParticle;
+
+    public int points;
+
 	GameObject player;
 	public PlayerControl.Lanes lane;
 	Vector3 target;
@@ -16,6 +23,8 @@ public class Enemy : MonoBehaviour {
 	int spawnBeat;
 	public const int beatsToDeath = 40;
 	public const int hitWindow = 2;
+
+	public Sprite[] shipSprites = new Sprite[6];
 
 	public AudioClip playerHitSound;
 
@@ -66,9 +75,9 @@ public class Enemy : MonoBehaviour {
 		}
 
 		if (beatz.beat && beatz.beatTracker % 8 == 0) {
-			gameObject.transform.localScale += new Vector3(0.2f, 0.2f, 0.2f);
+			gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
 		} else if (beatz.beat && beatz.beatTracker % 8 == 1){
-			gameObject.transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f);
+			gameObject.transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
 		}
 
 		inputState = GamePad.GetState(0);
@@ -77,19 +86,24 @@ public class Enemy : MonoBehaviour {
 		if(deathButtons.buttonPressCompare (inputState, prevState) && 
 		   beatz.beatTracker <= spawnBeat + beatsToDeath + hitWindow - 1 && 
 		   beatz.beatTracker >= spawnBeat + beatsToDeath - hitWindow &&
-		   lane == player.GetComponent<PlayerControl>().pos) {
-			gameObject.GetComponent<AudioSource>().Play ();
-			Destroy(renderer);
-			passed = true;
-			score.Hit(10);
-		}
+		   lane == player.GetComponent<PlayerControl>().pos &&
+            !passed) {
+               Vector3 laserPos = player.transform.position;
+               laserPos.x += player.transform.localScale.x / 2;
+			   Instantiate(explosionParticle, transform.position, Quaternion.Euler(-90, 0, 0));
+			   Destroy(renderer);
+               Destroy(engineParticle.gameObject);
+			   passed = true;
+			   score.Hit(points);
+        }
 
 		if (!passed && beatz.beatTracker == spawnBeat + beatsToDeath + 8) {
 			if (lane == player.GetComponent<PlayerControl>().pos) {
 				score.GotHit();
+                Instantiate(playerExplosionParticle, player.transform.position, Quaternion.Euler(0, -90, 0));
 				Destroy(renderer);
+                Destroy(engineParticle.gameObject);
 				passed = true;
-				AudioSource.PlayClipAtPoint(playerHitSound, transform.position);
 			} else {
 				passed = true;
 				score.Dodge();
@@ -134,22 +148,22 @@ public class Enemy : MonoBehaviour {
 
 	void SetColor () {
 		if (deathButtons.buttonState[ButtonSet.TestButtons.A] == ButtonState.Pressed) {
-			renderer.material.color = Color.green;
+			gameObject.GetComponent<SpriteRenderer>().sprite = shipSprites[0];
 		}
 		if (deathButtons.buttonState[ButtonSet.TestButtons.B] == ButtonState.Pressed) {
-			renderer.material.color = Color.red;
+			gameObject.GetComponent<SpriteRenderer>().sprite = shipSprites[1];
 		}
 		if (deathButtons.buttonState[ButtonSet.TestButtons.X] == ButtonState.Pressed) {
-			renderer.material.color = Color.blue;
+			gameObject.GetComponent<SpriteRenderer>().sprite = shipSprites[2];
 		}
 		if (deathButtons.buttonState[ButtonSet.TestButtons.Y] == ButtonState.Pressed) {
-			renderer.material.color = Color.yellow;
+			gameObject.GetComponent<SpriteRenderer>().sprite = shipSprites[3];
 		}
 		if (deathButtons.buttonState[ButtonSet.TestButtons.L] == ButtonState.Pressed) {
-			renderer.material.color = Color.white;
+			gameObject.GetComponent<SpriteRenderer>().sprite = shipSprites[4];
 		}
 		if (deathButtons.buttonState[ButtonSet.TestButtons.R] == ButtonState.Pressed) {
-			renderer.material.color = Color.gray;
+			gameObject.GetComponent<SpriteRenderer>().sprite = shipSprites[5];
 		}
 	}
 }

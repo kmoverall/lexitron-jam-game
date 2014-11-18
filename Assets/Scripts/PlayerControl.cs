@@ -6,6 +6,10 @@ public class PlayerControl : MonoBehaviour {
 	
 	BeatManager beatz;
 	LevelReader level;
+    Score score;
+
+    public Transform laserParticle;
+    public Transform wormholeParticle;
 
 	public Transform topLane;
 	public Transform midLane;
@@ -25,12 +29,14 @@ public class PlayerControl : MonoBehaviour {
 	public float speed;
 
 	GamePadState inputState;
+    GamePadState prevState;
 	PlayerIndex playerIndex;
 
 	// Use this for initialization
 	void Start () {
 		beatz = GameObject.FindObjectOfType<Camera>().GetComponent<BeatManager>();
 		level = GameObject.FindObjectOfType<Camera>().GetComponent<LevelReader>();
+        score = GameObject.FindObjectOfType<Camera>().GetComponent<Score>();
 
 		state = PlayerState.CRUISING;
 		pos = Lanes.MID;
@@ -145,7 +151,24 @@ public class PlayerControl : MonoBehaviour {
                 break;
             }
         }
+
+        if (ButtonSet.AnyButtonPressed(inputState, prevState) && level.state == LevelReader.LevelState.CRUISING)
+        {
+            Vector3 laserPos = transform.position;
+            laserPos.x += transform.localScale.x / 2;
+            Instantiate(laserParticle, laserPos, Quaternion.Euler(0, 90, 0));
+        }
+
+        /*if (ButtonSet.AnyButtonPressed(inputState, prevState) && level.state == LevelReader.LevelState.WORMHOLE)
+        {
+            Vector3 laserPos = transform.position;
+            laserPos.x += transform.localScale.x / 2;
+            Instantiate(wormholeParticle, laserPos, Quaternion.Euler(0, 90, 0));
+        }*/
+
+        prevState = inputState;
     }
+
     
     void Move() {
         float step = (float)speed * Time.deltaTime;

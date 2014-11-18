@@ -130,4 +130,22 @@ public class ButtonSet {
 		}
 		return buttonIndex == pressIndex;
 	}
+
+    public static bool AnyButtonPressed(GamePadState state, GamePadState prev)
+    {
+        if (state.Buttons.A == ButtonState.Pressed && prev.Buttons.A == ButtonState.Released)
+            return true;
+        if (state.Buttons.B == ButtonState.Pressed && prev.Buttons.B == ButtonState.Released)
+            return true;
+        if (state.Buttons.X == ButtonState.Pressed && prev.Buttons.X == ButtonState.Released)
+            return true;
+        if (state.Buttons.Y == ButtonState.Pressed && prev.Buttons.Y == ButtonState.Released)
+            return true;
+        if (state.Buttons.LeftShoulder == ButtonState.Pressed && prev.Buttons.LeftShoulder == ButtonState.Released)
+            return true;
+        if (state.Buttons.RightShoulder == ButtonState.Pressed && prev.Buttons.RightShoulder == ButtonState.Released)
+            return true;
+
+        return false;
+    }
 }

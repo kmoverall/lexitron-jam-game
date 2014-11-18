@@ -8,6 +8,7 @@ public class Score : MonoBehaviour {
 	int health;
 	int streak;
 
+
 	BeatManager beatz;
 
 	ScoreTracker tracker;
@@ -25,31 +26,37 @@ public class Score : MonoBehaviour {
 		GUI.Label (new Rect (25, 25, 100, 30), "Score: " + score);
 		GUI.Label (new Rect (25, 45, 100, 30), "x" + multiplier);
 		GUI.Label (new Rect (25, 65, 100, 30), "Streak: " + streak);
-		GUI.Label (new Rect (25, 85, 100, 30), "Health: " + health);
+		GUI.Label (new Rect (25, 85, 100, 30), "Energy: " + health);
 	}
 
-	void FixedUpdate () {
-		tracker.score = score;
-		tracker.percentage = (100 * beatz.beatTracker) / beatz.totalBeats;
-		if (health <= 0) {
-			Application.LoadLevel("Game Over");
-		}
-	}
+    void updateScore()
+    {
+        tracker.score = score;
+        tracker.percentage = (100 * beatz.beatTracker) / beatz.totalBeats;
+        if (health <= 0)
+        {
+            Application.LoadLevel("Game Over");
+        }
+    }
 
 	public void GotHit () {
-		health -= 20;
+		health -= 15;
 		multiplier = 1;
 		streak = 0;
+        updateScore();
 	}
 
-	public void Dodge () {
+    public void Dodge()
+    {
 		if (multiplier > 1)
 			multiplier--;
 		streak = 0;
+        updateScore();
 	}
 
-	public void Hit (int points) {
-		score += points*multiplier;
+    public void Hit(int pointsScored)
+    {
+		score += pointsScored*multiplier;
 		streak++;
 		if (health < 99) {
 			health += 2;
@@ -59,5 +66,16 @@ public class Score : MonoBehaviour {
 		if(streak % 10 == 0 && multiplier < 10) {
 			multiplier++;
 		}
+        updateScore();
 	}
+
+    public void Miss()
+    {
+        if (multiplier > 1)
+            multiplier--;
+        streak = 0;
+        if(health > 2)
+            health -= 2;
+        updateScore();
+    }
 }

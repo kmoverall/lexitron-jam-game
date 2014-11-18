@@ -25,7 +25,6 @@ public class LevelReader : MonoBehaviour {
 		beatz = GameObject.FindObjectOfType<Camera>().GetComponent<BeatManager>();
 
 		TextAsset textAsset = Resources.Load<TextAsset>("cephalopod");
-		Debug.Log (textAsset.text);
 		chart = new XmlDocument();
 		chart.LoadXml(textAsset.text);
 	}
