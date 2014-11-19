@@ -6,7 +6,6 @@ public class GameOverScript : MonoBehaviour {
 
 	ScoreTracker tracker;
 	GUIStyle style;
-	float sceneLoad;
 
 	int selectedIndex = 0;
 
@@ -16,7 +15,6 @@ public class GameOverScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		tracker = GameObject.FindGameObjectWithTag("ScoreTracker").GetComponent<ScoreTracker>();
-		sceneLoad = Time.time;
 		inputState = GamePad.GetState(0);
 		prevState = GamePad.GetState(0);
 	}
@@ -25,16 +23,16 @@ public class GameOverScript : MonoBehaviour {
 		style = GUI.skin.GetStyle("Label");
 		style.alignment = TextAnchor.MiddleCenter;
 		style.normal.textColor = Color.white;
-		if (tracker.percentage < 100) {
+		if (tracker.Percentage < 100) {
 			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 - 100, 100, 50), "GAME OVER", style);
 			GUI.Label (new Rect (Screen.width/2 - 150, Screen.height/2 - 70, 300, 50), "That day, fresh beats went silent in the Groove Galaxy.", style);
-			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 - 40, 100, 50), tracker.percentage + "%", style);
-			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 - 10, 100, 50), "Score: "+tracker.score, style);
+			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 - 40, 100, 50), tracker.Percentage + "% Complete", style);
+			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 - 10, 100, 50), "Score: "+tracker.Score, style);
 		} else {
 			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 - 100, 100, 50), "SUCCESS", style);
 			GUI.Label (new Rect (Screen.width/2 - 150, Screen.height/2 - 70, 300, 50), "The Groove Galaxy is safe to jam another day.", style);
 			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 - 40, 100, 50), "100%", style);
-			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 - 10, 100, 50), "Score: "+tracker.score, style);
+			GUI.Label (new Rect (Screen.width/2 - 50, Screen.height/2 - 10, 100, 50), "Score: "+tracker.Score, style);
 		}
 
 		if (selectedIndex == 0) {
@@ -66,7 +64,7 @@ public class GameOverScript : MonoBehaviour {
 
 		if (inputState.Buttons.X == ButtonState.Pressed && prevState.Buttons.X != ButtonState.Pressed) {
 			if (selectedIndex == 0) {
-				Application.LoadLevel("Cruise");
+				Application.LoadLevel("CityDefense");
 			} else {
 				Application.LoadLevel("Main Menu");
 			}
