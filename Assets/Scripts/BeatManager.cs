@@ -4,25 +4,19 @@ using System.Collections;
 public class BeatManager : MonoBehaviour {
 
 	float startTime;
-	int beatTracker;
-	bool beat;
-    int tempo = 124;
-	int totalBeats = 4100;
+	public int beatTracker;
+	public bool beat;
+	public int tempo = 124;
+	public int totalBeats = 4100;
 	public int countOff = 64;
 	public AudioClip metronomeClick;
 
-    bool countingOff;
-
-    public int Tempo { get { return tempo; } }
-    public int CurrentBeat { get { return beatTracker; } }
-    public int TotalBeats { get { return totalBeats; } }
-    public bool IsBeat { get { return beat; } }
-    public bool CountingOff { get { return countingOff; } }
+	public bool countingOff;
 
 	// Use this for initialization
 	void Start () {
 		totalBeats = 4100;
-		beatTracker = -1 * countOff;
+		beatTracker = 0;
 		countingOff = true;
 		startTime = Time.time;
 	}

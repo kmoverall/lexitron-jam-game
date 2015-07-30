@@ -31,8 +31,8 @@ public class Score : MonoBehaviour {
 
     void updateScore()
     {
-        tracker.Score = score;
-        tracker.Percentage = (100 * beatz.TotalBeats) / beatz.TotalBeats;
+        tracker.score = score;
+        tracker.percentage = (100 * beatz.beatTracker) / beatz.totalBeats;
         if (health <= 0)
         {
             Application.LoadLevel("Game Over");
